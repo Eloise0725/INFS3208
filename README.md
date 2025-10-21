@@ -1,18 +1,10 @@
-# Team *<Magpie>* Small Group project
-
-## Team members
-The members of the team are:
-- *Koay Hoe Yeen*
-- *Narayan Gahlawat*
-- *Lina Namoun*
-- *Amber Leung*
-- *Ziwen Wang*
+# INFS3208 *<Magpie>* project
 
 ## Project structure
 The project is called `msms` (Music School Management System).  It currently consists of a single app `lessons` where all functionality resides.
 
 ## Deployed version of the application
-The deployed version of the application can be found at *<[magpie01.pythonanywhere.com](URL)>*.
+The deployed version of the application can be found at *<[(https://msms-fa5z55zwkq-km.a.run.app/)(URL)>*.
 
 ## Installation instructions
 To install the software and use it in your local development environment, you must first set up and activate a local development environment.  From the root of the project:
