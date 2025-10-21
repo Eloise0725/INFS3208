@@ -1,0 +1,43 @@
+{% extends 'base_content.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+        <p>  </p>
+        <h1>School Terms</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg">
+            <table class="table">
+                <tr>
+                    <th>Term</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th></th>
+                </tr>
+                {% for terms in term_dates %}
+                <tr>
+                    <td><a href="{% url 'edit_term' terms.id %}">Term {{ terms.term_number }}</a></td>
+                    <td>{{ terms.start_date }}</td>
+                    <td>{{ terms.end_date }}</td>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <td><button type="submit" name = 'delete' value={{ terms.id }} class="btn button btn-secondary">Delete</td>
+                    </form>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col">
+            <form action="{%url 'school_term' %}" method="post">
+            {% csrf_token %}
+            {% include 'partials/bootstrap_form.html' with form=form %}
+            <input type="submit" name = 'create' value="Create" class="btn button btn-secondary">
+            </form>
+        </div>
+        </div>
+        </div>
+    </div>
+  
+</div>
+</div>
+{% endblock %}

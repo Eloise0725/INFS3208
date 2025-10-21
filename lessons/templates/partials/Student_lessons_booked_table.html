@@ -1,0 +1,34 @@
+<table class = "table">
+    <tr>
+      <th>Invoice Number</th>
+      <th>Invoice Reference</th>
+      <th>Child</th>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Teacher</th>
+      <th>Start date</th>
+      <th>Duration of Lessons</th>
+      <th>Interval Between Lessons</th>
+      <th>Number of Lessons</th>
+      <th>Price</th>
+      <th>Paid</th>
+      <th></th>
+    </tr>
+    {% for booked in bookings %}
+    <tr>
+        <td>{{ booked.id}}</td>
+        <td>{{ booked.user.id}}-{{ booked.id}}</td>
+        <td>{{ booked.child }}</td>
+        <td>{{ booked.day }}</td>
+        <td>{{ booked.time }}</td>
+        <td>{{ booked.teacher }}</td>
+        <td>{{ booked.start_date }}</td>
+        <td>{{ booked.duration }}</td>
+        <td>{{ booked.interval }}</td>
+        <td>{{ booked.number_of_lessons }}</td>
+        <td>${{ booked.full_price }}</td>
+        <td>${{ booked.payment_made}}</td>
+    </tr>
+    {% endfor %}
+</table>
+

@@ -1,0 +1,5 @@
+DJANGO_DEBUG: "False"
+DJANGO_ALLOWED_HOSTS: "msms-fa5z55zwkq-km.a.run.app,.run.app,.a.run.app"
+CSRF_TRUSTED_ORIGINS: "https://msms-fa5z55zwkq-km.a.run.app,https://*.run.app,https://*.a.run.app"
+CSRF_COOKIE_SECURE: "True"
+SESSION_COOKIE_SECURE: "True"

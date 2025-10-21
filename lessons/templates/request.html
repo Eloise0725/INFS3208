@@ -1,0 +1,17 @@
+{% extends 'base_content.html' %}
+{% block content %}
+<div id="bookings-image">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Magpie Music School Booking</h1>
+      <form action="{% url 'request' %}" method="post">
+        {% csrf_token %}
+        {% include 'partials/bootstrap_form.html' with form=form %}
+        <input type="submit" value="Book Lessons" class="btn button btn-secondary">
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

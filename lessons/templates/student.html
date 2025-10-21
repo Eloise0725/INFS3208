@@ -1,0 +1,23 @@
+{% extends 'base_content.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12" align = "right">
+            <p>
+                Logged in as: {{user.first_name}} {{user.last_name}}
+                <br>Student ID: {{user.id}}
+                <br>Balance: ${{balance}}
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Requests Made</h2>
+                {% include 'partials/Student_request_table.html' with requests=requests %}
+             <Br/>
+                <h2>Lessons Booked</h2>
+                {% include 'partials/Student_lessons_booked_table.html' with bookings=bookings %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

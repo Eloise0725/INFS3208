@@ -1,0 +1,38 @@
+{% extends 'base_content.html' %}
+{% load auth_extras %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Admin Users</h1>
+      <a href="{% url 'create_admin' %}"><input type="submit" value="+" class="btn button-small btn-secondary"></a>
+      <table class="table">
+        <tr>
+          <th>Email</th>
+          <th>First name</th>
+          <th>Last name</th>
+        </tr>
+        {% for user in admin %}
+          <tr>
+            <td>{{ user.email }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <form action="" method="post">
+              {% csrf_token %}
+              <td><button type="submit" name = "edit" value={{ user.email }} class="btn button-admin btn-secondary">Edit</td>
+              <td><button type="submit" name = 'delete' value={{ user.email }} class="btn button-admin btn-secondary">Delete</td>
+              <span class="float-end">
+                {% if user|has_group:"Director" %}
+                  <td><button name = "super_admin" value={{ user.email }} class="btn button btn-secondary">Remove super-admin</button></td>
+                {% else %}
+                  <td><button name = "super_admin" value={{ user.email }} class="btn button-admin btn-secondary">Make super-admin</button></td>
+                {% endif %}
+              </span>
+            </form>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

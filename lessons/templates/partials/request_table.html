@@ -1,0 +1,14 @@
+<table class = "table">
+    <tr>
+        <th></th>
+        <th>Student</th>
+        <th>Days Available</th>
+        <th>Number Of Lessons</th>
+        <th>Interval Between Lessons</th>
+        <th>Duration Of Lessons</th>
+        <th>Further Information</th>
+    </tr>
+    {% for unfulfiled in request %}
+        {% include 'partials/request_table_row.html' with unfulfiled=unfulfiled %}
+    {% endfor %}
+</table>

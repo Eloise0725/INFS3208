@@ -1,0 +1,26 @@
+{% extends 'base_content.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2>All Incoming Transactions</h2>
+        <table>
+          <tr>
+            <th>Reference Number</th>
+            <th>Student</th>
+            <th>Email</th>
+            <th>Transfer Date</th>
+            <th>Amount</th>
+          </tr>
+            {% for transaction in transactions %}
+          <tr>
+              <td>{{transaction.user.id}}-{{transaction.invoice_id}}</td>
+              <td>{{transaction.user.first_name}} {{transaction.user.last_name}}</td>
+              <td>{{transaction.user}}</td>
+              <td>{{transaction.transfer_date}}</td>
+              <td>${{transaction.amount}}</td>
+          </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

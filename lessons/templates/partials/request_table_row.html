@@ -1,0 +1,9 @@
+<tr>
+    <td><a href='{% url 'booking' unfulfiled.id %}'><input type="submit" value = "Book" class="btn button-small btn-secondary"></Button></a></td>
+    <td>{{ unfulfiled.user }}</td>
+    <td>{{ unfulfiled.daysAvailable }}</td>
+    <td>{{ unfulfiled.numberOfLessons }}</td>
+    <td>{{ unfulfiled.intervalBetweenLessons }}</td>
+    <td>{{ unfulfiled.durationOfLessons }}</td>
+    <td>{{ unfulfiled.furtherInformation }}</td>
+</tr>

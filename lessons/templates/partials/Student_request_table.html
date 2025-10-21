@@ -1,0 +1,33 @@
+<table class = "table">
+    <tr>
+        <th>Child</th>
+        <th>Day Available</th>
+        <th>Number Of Lessons</th>
+        <th>Duration</th>
+        <th>Interval between Lessons</th>
+    </tr>
+  {% for req in requests %}
+    <tr>
+        <td>
+            {{req.child}}
+        </td>
+        <td>
+            {{req.daysAvailable}}
+        </td>
+        <td>
+            {{req.numberOfLessons}}
+        </td>
+        <td>
+            {{req.durationOfLessons}}
+        </td>
+        <td>
+            {{req.intervalBetweenLessons}}
+        </td>
+        <form action="" method="post">
+            {% csrf_token %}
+            <td><Button type="submit" name = "edit" value={{ req.id }} class="btn button-admin btn-secondary">Edit</td>
+            <td><button type="submit" name = 'delete' value={{ req.id }} class="btn button-admin btn-secondary">Delete</td>
+        </form>
+    </tr>
+  {% endfor %}
+</table>

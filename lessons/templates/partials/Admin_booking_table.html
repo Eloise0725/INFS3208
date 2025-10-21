@@ -1,0 +1,36 @@
+<table class = "table">
+    <tr>
+        <th>
+            Ref. Number
+        </th>
+        <th>
+            No. Of Lessons
+        </th>
+        <th>
+            Duration
+        </th>
+        <th>
+            Intervals
+        </th>
+    </tr>
+  {% for booking in bookings %}
+    <tr>
+        <td>
+            {{booking.user.id}}-{{booking.id}}
+        </td>
+        <td>
+            {{booking.numberOfLessons}}
+        </td>
+        <td>
+            {{booking.durationOfLessons}} Minutes
+        </td>
+        <td>
+            {{booking.intervalBetweenLessons}} Weeks
+        </td>
+        <form action="" method="post">
+              {% csrf_token %}
+              <td><button type="submit" name = 'delete' value={{ booking.id }} class="btn btn-danger">Delete</td>
+        </form>
+    </tr>
+  {% endfor %}
+</table>

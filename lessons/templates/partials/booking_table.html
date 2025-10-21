@@ -1,0 +1,18 @@
+<table class="table">
+    <tr>
+      <th></th>
+      <th>Student</th>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Teacher</th>
+      <th>Start date</th>
+      <th>Duration of Lessons</th>
+      <th>Interval Between Lessons</th>
+      <th>Number of Lessons</th>
+      <th>Price per lesson</th>
+      <th></th>
+    </tr>
+    {% for booked in booking %}
+        {% include 'partials/booking_table_row.html' with booked=booked %}
+    {% endfor %}
+  </table>

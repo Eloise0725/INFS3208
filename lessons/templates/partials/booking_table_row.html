@@ -1,0 +1,16 @@
+<tr>
+    <td><a href='{% url 'edit_booking' booked.id %}'><input type="submit" value = "Edit" class="btn button-small btn-secondary"></Button></a></td>
+    <td>{{ booked.user }}</td>
+    <td>{{ booked.day }}</td>
+    <td>{{ booked.time }}</td>
+    <td>{{ booked.teacher }}</td>
+    <td>{{ booked.start_date }}</td>
+    <td>{{ booked.duration }}</td>
+    <td>{{ booked.interval }}</td>
+    <td>{{ booked.number_of_lessons }}</td>
+    <td>${{ booked.price_per_lesson }}</td>
+    <form action="" method="post">
+        {% csrf_token %}
+        <td><button type="submit" name = 'delete' value={{ booked.id }} class="btn button-small btn-secondary">-</td>
+    </form>
+</tr>

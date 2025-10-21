@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand"><span>Magpie</span> Music</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {% if user.is_authenticated %}
+          {% include 'partials/menu.html' with user=user %}
+        {% else %}
+        <li class="nav-item">
+          <a class="signup" href="{% url 'sign_up' %}">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="login" href="{% url 'log_in' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

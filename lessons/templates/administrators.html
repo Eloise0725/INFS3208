@@ -1,0 +1,17 @@
+{% extends 'base_content.html' %}
+{% load auth_extras %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12" align = "middle">
+      <h1>Requests for lessons</h1>
+      {% include 'partials/request_table.html' with request=request %}
+      <Br/>
+      <h1>Booked lessons</h1>
+      {% include 'partials/booking_table.html' with booking=booking %}
+      <p>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

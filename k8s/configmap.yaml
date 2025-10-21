@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: msms-config
+  namespace: msms
+data:
+  DJANGO_DEBUG: "False"
+  DJANGO_ALLOWED_HOSTS: "*"
+  DB_NAME: "msms"
+  DB_USER: "msms"
+  DB_HOST: "postgres"
+  DB_PORT: "5432"
+  CURRENCY_SYMBOL: "$"
