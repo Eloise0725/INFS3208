@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: msms-ingress
+  namespace: msms
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "msms-ip"
+    networking.gke.io/managed-certificates: "msms-cert"
+spec:
+  defaultBackend:
+    service:
+      name: msms-svc
+      port:
+        number: 80
+---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: msms-cert
+  namespace: msms
+spec:
+  domains:
+    - msms.example.com  # Replace with your actual domain

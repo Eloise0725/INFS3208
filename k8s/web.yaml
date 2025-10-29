@@ -32,8 +32,8 @@ spec:
 
       containers:
       - name: web
-        image: msms:v1
-        imagePullPolicy: IfNotPresent
+        image: australia-southeast2-docker.pkg.dev/infs3208-magpie/msms/msms:latest
+        imagePullPolicy: Always
         ports: [ { containerPort: 8000 } ]
         envFrom:
         - configMapRef: { name: msms-config }

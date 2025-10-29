@@ -25,6 +25,9 @@ media/
 *.key
 *.pem
 secrets.json
+github-actions-key.json
+*-key.json
+service-account*.json
 
 # Docker / 本地数据
 *.pid
@@ -35,3 +38,8 @@ temp/
 # Node（若有前端）
 node_modules/
 dist/
+
+# Claude Code and deployment documentation
+CLAUDE.md
+deployment-docs/
+GITHUB-SECRETS.txt
