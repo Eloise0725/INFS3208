@@ -68,8 +68,8 @@ jobs:
     - name: Update Secret with Django Key
       run: |
         kubectl create secret generic msms-secrets \
-          --from-literal=DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} \
-          --from-literal=DB_PASSWORD=${{ secrets.DB_PASSWORD }} \
+          --from-literal=DJANGO_SECRET_KEY="${{ secrets.DJANGO_SECRET_KEY }}" \
+          --from-literal=DB_PASSWORD="${{ secrets.DB_PASSWORD }}" \
           --namespace=msms \
           --dry-run=client -o yaml | kubectl apply -f -
 
